@@ -14,6 +14,10 @@
 
     <title>Frontend Mentor | Expenses chart component</title>
 
+    <script src="./script.js" defer></script>
+
+    <link rel="stylesheet" href="style.css" />
+
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -28,6 +32,32 @@
   <body>
     <!-- My balance $921.48 Spending - Last 7 days mon tue wed thu fri sat sun Total
     this month $478.33 +2.4% from last month -->
+
+    <div class="container">
+      <div class="card card-top">
+        <div class="left">
+          <h2>My balance</h2>
+          <h1>$921.48</h1>
+        </div>
+        <div class="right"><img src="./images/logo.svg" /></div>
+      </div>
+      <div class="card card-bottom">
+        <h1>Spending - Last 7 days</h1>
+        <div class="charts">
+          <!-- DAYS HERE -->
+        </div>
+        <div class="month">
+          <div class="left">
+            <h2>Total this month</h2>
+            <h1 id="month-total">$0.00</h1>
+          </div>
+          <div class="right">
+            <span>+2.4%</span>
+            from last month
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- <div class="attribution">
       Challenge by

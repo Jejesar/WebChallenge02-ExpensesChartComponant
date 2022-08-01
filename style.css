@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f8e9dd;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.card {
+  margin: 25px;
+  padding: 35px;
+  border-radius: 15px;
+  min-width: 500px;
+  box-shadow: 2px 2px 20px rgba(147, 134, 123, 0.2);
+}
+.card.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ec775f;
+  color: #fffaf5;
+}
+.card.card-top h2 {
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+.card.card-bottom {
+  background-color: #fffaf5;
+}
+.card.card-bottom .charts {
+  margin: 25px 0;
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  position: relative;
+}
+.card.card-bottom .charts:after {
+  content: "";
+  position: absolute;
+  border-bottom: 2px solid rgba(147, 134, 123, 0.3);
+  width: 25%;
+  bottom: 0;
+}
+.card.card-bottom .charts::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width: 100%;
+  height: 75%;
+  background: linear-gradient(to bottom, transparent, transparent 90%, rgba(147, 134, 123, 0.2) 90%, rgba(147, 134, 123, 0.2));
+  background-size: 100% 20px;
+}
+.card.card-bottom .charts .day {
+  flex: 1;
+  text-align: center;
+}
+.card.card-bottom .charts .day .day-value {
+  height: attr(data-height);
+  width: calc(100% - 1em);
+  margin-left: 0.5em;
+  background-color: #ec775f;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+.card.card-bottom .charts .day .day-value.max {
+  background-color: #76b5bc;
+}
+.card.card-bottom .charts .day .day-value.max:hover {
+  background-color: #aad1d5;
+}
+.card.card-bottom .charts .day .day-value:hover {
+  background-color: #f29e8d;
+}
+.card.card-bottom .charts .day .day-value::after {
+  content: "$" attr(data-height);
+  position: absolute;
+  left: 50%;
+  padding: 0 5px;
+  background-color: #382314;
+  color: #fffaf5;
+  border-radius: 5px;
+  animation: pricesWiggle alternate 2s ease-in-out infinite;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+.card.card-bottom .charts .day .day-value:hover::after {
+  opacity: 1;
+}
+.card.card-bottom .charts .day .day-name {
+  color: #93867b;
+  font-size: 0.9em;
+}
+.card.card-bottom .month {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 25px;
+}
+.card.card-bottom .month .left h2 {
+  color: #93867b;
+  font-size: 1em;
+  font-weight: 400;
+}
+.card.card-bottom .month .left h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.card.card-bottom .month .right {
+  text-align: end;
+  color: #93867b;
+  display: flex;
+  flex-direction: column;
+}
+.card.card-bottom .month .right span {
+  color: #000;
+  font-weight: 700;
+}
+
+@keyframes pricesWiggle {
+  0% {
+    transform: translate(-50%, -125%);
+  }
+  100% {
+    transform: translate(-50%, -150%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
